@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "PCB_Antenna") (type "KiCad") (uri "${KIPRJMOD}/PCB_Antenna.pretty") (options "") (descr ""))
+)

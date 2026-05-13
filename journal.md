@@ -78,3 +78,23 @@ I added the touch interface.
 ![alt text](journal/image11.png)
 
 ![alt text](journal/image12.png)
+
+# May 13th: Antennas and PCB design
+
+Today I added an antenna to the esp32.
+
+[WIP] add img
+
+I then later replaced it with a proper implementation.
+
+![antenna config](journal/image13.png)
+
+WIP add footprint img
+
+I also replaced the PCB with a proper two layer one, the bottom layer being GND.
+
+I later chose to make the PCB 4 layer, distributing 3.3v, GND and having two routing layers.
+
+![PCB](journal/image14.png)
+
+![PCB in 3D](journal/image15.png)
