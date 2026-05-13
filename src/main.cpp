@@ -3,147 +3,77 @@
 #include <lvgl.h>
 #include <esp_timer.h>
 
-// ==========================
-// PIN CONFIG (EDIT THESE)
-// ==========================
-
-#define PIN_CS 5
-#define PIN_RST 17
-#define PIN_HRDY 16 // HOSTHRDY
-#define PIN_MOSI 23
-#define PIN_MISO 19
-#define PIN_SCK 18
-
-// ==========================
-// LVGL TICK
-// ==========================
-
 static uint32_t lv_tick(void)
 {
   return esp_timer_get_time() / 1000;
 }
 
-// ==========================
-// IT8951 LOW-LEVEL WRAPPER
-// ==========================
+#include <SPI.h>
+#include <GxEPD2_BW.h>
+#include <lvgl.h>
 
-class IT8951
+// ── Pin definitions ──────────────────────────────────────────────
+#define EPD_CS 5
+#define EPD_DC -1 // IT8951 does NOT use a DC pin
+#define EPD_RST 17
+#define EPD_HRDY 4 // HRDY = BUSY equivalent
+
+// ── VCOM voltage ─────────────────────────────────────────────────
+// Check the sticker on your panel, e.g. -2.33V → 2330
+#define VCOM_MV 2330
+
+// ── Display object ───────────────────────────────────────────────
+// GxEPD2_BW<driver, max_height>(cs, dc, rst, busy)
+GxEPD2_BW<GxEPD2_it103_1872x1404, GxEPD2_it103_1872x1404::HEIGHT>
+    display(EPD_CS, EPD_DC, EPD_RST, EPD_HRDY);
+
+// ── LVGL draw buffer ─────────────────────────────────────────────
+// 1/10th screen = 1872*1404/10 pixels. For 16-bit color that's ~525 KB.
+// If RAM is tight, reduce to 1/20th or use LV_COLOR_DEPTH 4 directly.
+static const int BUF_LINES = 14; // 14 lines at a time
+static lv_color_t lvgl_buf[1872 * BUF_LINES];
+static lv_disp_draw_buf_t draw_buf;
+static lv_disp_drv_t disp_drv;
+
+// ── LVGL flush callback ──────────────────────────────────────────
+void epaper_flush(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *color_p)
 {
-public:
-  void begin()
+  int32_t w = area->x2 - area->x1 + 1;
+  int32_t h = area->y2 - area->y1 + 1;
+
+  // Build a 4bpp grayscale buffer for GxEPD2 writeNative.
+  // LVGL 16-bit color: top 5 bits = red. Map top 4 bits → 0..15 gray.
+  // GxEPD2 IT8951 native = 1 byte per pixel, 0x00=black 0xFF=white.
+  static uint8_t native_buf[1872 * BUF_LINES];
+  lv_color_t *src = color_p;
+  uint8_t *dst = native_buf;
+
+  for (int32_t y = 0; y < h; y++)
   {
-    pinMode(PIN_CS, OUTPUT);
-    pinMode(PIN_RST, OUTPUT);
-    pinMode(PIN_HRDY, INPUT);
-
-    digitalWrite(PIN_CS, HIGH);
-
-    SPI.begin(PIN_SCK, PIN_MISO, PIN_MOSI, PIN_CS);
-
-    reset();
-    wait_ready();
-  }
-
-  void reset()
-  {
-    digitalWrite(PIN_RST, LOW);
-    delay(50);
-    digitalWrite(PIN_RST, HIGH);
-    delay(200);
-  }
-
-  void wait_ready()
-  {
-    while (digitalRead(PIN_HRDY) == LOW)
+    for (int32_t x = 0; x < w; x++)
     {
-      delay(1);
+      // Extract 4-bit gray from 16-bit color (top 4 bits of red channel)
+      uint8_t gray4 = (src->ch.red >> 1) & 0x0F; // 0..15
+      *dst++ = gray4 << 4;                       // scale to 0x00..0xF0 (IT8951 4bpp range)
+      src++;
     }
   }
 
-  void write_command(uint16_t cmd)
+  display.writeNative(native_buf, nullptr,
+                      area->x1, area->y1, w, h,
+                      false, false, false);
+
+  // Trigger a display refresh only on the last chunk
+  if (lv_disp_flush_is_last(drv))
   {
-    wait_ready();
-
-    digitalWrite(PIN_CS, LOW);
-
-    SPI.transfer(cmd & 0xFF);
-    SPI.transfer(cmd >> 8);
-
-    digitalWrite(PIN_CS, HIGH);
+    display.refresh(area->x1, area->y1,
+                    area->x2 - area->x1 + 1,
+                    area->y2 - area->y1 + 1,
+                    true); // true = partial refresh
   }
 
-  void write_data(const uint8_t *data, size_t len)
-  {
-    wait_ready();
-
-    digitalWrite(PIN_CS, LOW);
-
-    for (size_t i = 0; i < len; i++)
-    {
-      SPI.transfer(data[i]);
-    }
-
-    digitalWrite(PIN_CS, HIGH);
-  }
-
-  // simplified framebuffer write (region)
-  void write_image(int x, int y, int w, int h, const uint8_t *px)
-  {
-    // NOTE:
-    // Real IT8951 uses "load image area" commands.
-    // This is simplified structure only.
-
-    write_command(0x0002); // (placeholder: LOAD_IMAGE_AREA)
-
-    uint32_t header[5] = {
-        (uint32_t)x,
-        (uint32_t)y,
-        (uint32_t)w,
-        (uint32_t)h,
-        0 // mode
-    };
-
-    write_data((uint8_t *)header, sizeof(header));
-
-    write_data(px, w * h);
-  }
-
-  void refresh(int x, int y, int w, int h)
-  {
-    write_command(0x0004); // (placeholder: DISPLAY_AREA)
-
-    uint32_t args[4] = {
-        (uint32_t)x,
-        (uint32_t)y,
-        (uint32_t)w,
-        (uint32_t)h};
-
-    write_data((uint8_t *)args, sizeof(args));
-  }
-};
-
-static IT8951 epd;
-
-// ==========================
-// LVGL FLUSH CALLBACK
-// ==========================
-
-static void flush_cb(lv_display_t *disp,
-                     const lv_area_t *area,
-                     uint8_t *px_map)
-{
-  int w = area->x2 - area->x1 + 1;
-  int h = area->y2 - area->y1 + 1;
-
-  epd.write_image(area->x1, area->y1, w, h, px_map);
-  epd.refresh(area->x1, area->y1, w, h);
-
-  lv_display_flush_ready(disp);
+  lv_disp_flush_ready(drv);
 }
-
-// ==========================
-// SETUP
-// ==========================
 
 void setup()
 {
