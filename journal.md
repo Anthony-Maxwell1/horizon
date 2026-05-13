@@ -98,3 +98,9 @@ I later chose to make the PCB 4 layer, distributing 3.3v, GND and having two rou
 ![PCB](journal/image14.png)
 
 ![PCB in 3D](journal/image15.png)
+
+I also added haptic and a button for sleep. AFAIK, The PCB is complete!
+
+![Final PCB](journal/image16.png)
+
+I also did some driver work today, attempting to create an LVGL driver for the driver board.
