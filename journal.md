@@ -138,6 +138,11 @@ I also went over the feedback I recieved again, and added in resistors to the st
 
 ![Final PCB this time (I promise)](journal/image22.png)
 
+I then remembered my SD card, and added it in with minimal effort. I did, however, have to expand the PCB a bit to make space for the footprint.
+
+![SD Card schematic](journal/image23.png)
+![SD Card PCB](journal/image24.png)
+
 Now, seemingly done with the hardware for now, I wanted to delay going on to the CAD step, although that is probably going to be the fastest step. I've had enough of my macbook randomly stopping Lapse from recording.
 
 Time for some firmware!!! I decided to forget about getting it to run on the device for now, and just focus on getting it to run on my PC with a good interface.

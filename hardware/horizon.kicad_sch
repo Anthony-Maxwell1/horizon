@@ -7591,6 +7591,10 @@
 		(uuid "7b31d7f4-158c-453f-b99c-dd97fbf2895d")
 	)
 	(no_connect
+		(at 78.74 90.17)
+		(uuid "8ff13786-c567-4118-b7f1-4f006a4a4698")
+	)
+	(no_connect
 		(at 124.46 97.79)
 		(uuid "96c1862f-e134-4923-8ac9-031c055e536e")
 	)
@@ -8624,30 +8628,6 @@
 			)
 		)
 	)
-	(global_label "SDCARD_SHELL"
-		(shape input)
-		(at 124.46 69.85 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1b403bf8-cbb9-4e1b-bb02-bd2a189698a4")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 141.5361 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "SPI_MISO"
 		(shape input)
 		(at 38.1 80.01 0)
@@ -8805,30 +8785,6 @@
 		(uuid "370fbaf5-3242-4263-ba55-d31e6851a233")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 65.9578 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "SDCARD_CD"
-		(shape input)
-		(at 78.74 90.17 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "378441aa-1d76-4334-88d7-6c344e7423d9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 64.8691 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9464,30 +9420,6 @@
 			)
 		)
 	)
-	(global_label "SDCARD_SHELL"
-		(shape input)
-		(at 140.97 184.15 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "945c6cfc-c7c1-4baa-b51e-fbffb6349515")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.8939 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "USB_D+"
 		(shape input)
 		(at 186.69 58.42 0)
@@ -9989,6 +9921,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "SDCARD_CD"
+		(shape input)
+		(at 124.46 69.85 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d7c1be64-0fe0-40b2-8e11-0f6c25ce0e9c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 138.3309 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -11721,6 +11677,85 @@
 			(project "horizon"
 				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
 					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 140.97 184.15 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "271c6164-e651-4300-85da-878d51c75e8c")
+		(property "Reference" "#PWR065"
+			(at 134.62 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 137.16 184.1499 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 140.97 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "12e48c41-faf6-471d-bc9a-2faa898618a6")
+		)
+		(instances
+			(project "horizon"
+				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
