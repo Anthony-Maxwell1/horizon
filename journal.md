@@ -104,3 +104,40 @@ I also added haptic and a button for sleep. AFAIK, The PCB is complete!
 ![Final PCB](journal/image16.png)
 
 I also did some driver work today, attempting to create an LVGL driver for the driver board.
+
+# May 14th: Redid the PCB
+
+Today I finally recieved advice on my pcb, and generally it was simple: Don't use chatgpt. So, I restarted and remade my antenna system and decapacitance, etc. from docs.
+
+Notable schematic changes:
+
+![Connected power pins](journal/image17.png)
+Split power into three. I'm pretty sure there is supposed to be some seperation, but for now this is enough.
+
+![Connected power pins properly](journal/image18.png)
+I also properly applied decapacitance, with the proper capacitors for each pin, according to the image at the top of [this](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/schematic-checklist.html) page.
+
+![Redid antenna properly](journal/image19.png)
+I redid the antenna setup according to the above link as well. A lot of the stuff was TBD however, so I'll take care of that later.
+
+I also learnt a bit from the feedback, in relation to the pcb:
+
+- Put the esp32 near the antenna, and keep the traces between them short
+- Keep capacitors and similar close.
+
+![PCB](journal/image20.png)
+Eugh the web viewer is ugly.
+
+# May 15th: Finished the new PCB!
+
+I learnt about DRC, and used it to locate many unconnected connections I missed. Connecting them all up, I achieve this result. I also expanded keepout zone for the antenna.
+
+![Final PCB](journal/image21.png)
+
+I also went over the feedback I recieved again, and added in resistors to the status LED.
+
+![Final PCB this time (I promise)](journal/image22.png)
+
+Now, seemingly done with the hardware for now, I wanted to delay going on to the CAD step, although that is probably going to be the fastest step. I've had enough of my macbook randomly stopping Lapse from recording.
+
+Time for some firmware!!! I decided to forget about getting it to run on the device for now, and just focus on getting it to run on my PC with a good interface.

@@ -1797,6 +1797,456 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:SD_Card_Receptacle"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at -11.938 19.304 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SD_Card_Receptacle"
+				(at 10.922 -19.558 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 8.89 -3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "SD card receptacle"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector SD"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SD*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SD_Card_Receptacle_0_1"
+				(rectangle
+					(start -2.032 2.794)
+					(end -1.27 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -0.508 2.794)
+					(end 0.254 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 1.016 2.794)
+					(end 1.778 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.54 2.794)
+					(end 3.302 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 4.064 2.794)
+					(end 4.826 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 5.588 2.794)
+					(end 6.35 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 7.112 2.794)
+					(end 7.874 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 8.636 2.794)
+					(end 9.398 4.826)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 10.16 1.524)
+					(end 10.922 3.556)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "SD_Card_Receptacle_1_1"
+				(rectangle
+					(start -12.7 17.78)
+					(end 12.7 -17.78)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 9.906 5.588) (xy -2.794 5.588) (xy -2.794 -12.446) (xy 11.684 -12.446) (xy 11.684 3.81) (xy 9.906 5.588)
+					)
+					(stroke
+						(width 0.3)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "8"
+					(at -1.778 1.524 0)
+					(effects
+						(font
+							(size 0.9 0.9)
+						)
+					)
+				)
+				(text "1"
+					(at 8.89 1.524 0)
+					(effects
+						(font
+							(size 0.9 0.9)
+						)
+					)
+				)
+				(text "9"
+					(at 10.668 0.254 0)
+					(effects
+						(font
+							(size 0.9 0.9)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 2.54 0)
+					(length 2.54)
+					(name "CD/DAT3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -5.08 0)
+					(length 2.54)
+					(name "CMD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -20.32 90)
+					(length 2.54)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 20.32 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 -2.54 0)
+					(length 2.54)
+					(name "CLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -20.32 90)
+					(length 2.54)
+					(hide yes)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 10.16 0)
+					(length 2.54)
+					(name "DAT0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 7.62 0)
+					(length 2.54)
+					(name "DAT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 5.08 0)
+					(length 2.54)
+					(name "DAT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 15.24 10.16 180)
+					(length 2.54)
+					(name "CARD_DETECT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 15.24 7.62 180)
+					(length 2.54)
+					(name "WRITE_PROTECT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 -12.7 0)
+					(length 2.54)
+					(name "SHELL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "SH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:USB_C_Receptacle_USB2.0_14P"
 			(pin_names
 				(offset 1.016)
@@ -6959,12 +7409,6 @@
 		(uuid "2f8315b9-8929-439b-b686-0f096a1074ba")
 	)
 	(junction
-		(at 147.32 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "379f8af2-97df-483f-b0ff-8e4ddd05e067")
-	)
-	(junction
 		(at 129.54 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6981,12 +7425,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "50898b8b-bd51-48cd-8602-d294e746dad1")
-	)
-	(junction
-		(at 147.32 77.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "551ff93c-3eee-45ac-a335-b695d92e105f")
 	)
 	(junction
 		(at 226.06 44.45)
@@ -7103,6 +7541,12 @@
 		(uuid "cf81906c-6577-451f-b6d3-68050aea76c9")
 	)
 	(junction
+		(at 154.94 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d26c2923-5542-42ce-b595-df86ef478ff3")
+	)
+	(junction
 		(at 248.92 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7120,9 +7564,11 @@
 		(color 0 0 0 0)
 		(uuid "e31fb3d7-d08d-434c-b5dc-2285e567e3b1")
 	)
-	(no_connect
-		(at 124.46 69.85)
-		(uuid "17a3ae6f-ac43-447e-8d61-2f2503e41118")
+	(junction
+		(at 154.94 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f6c32d4a-6172-4d9f-bfd3-c5ac8e0b7bdf")
 	)
 	(no_connect
 		(at 38.1 67.31)
@@ -7137,36 +7583,16 @@
 		(uuid "4b23ed01-5bed-497b-b2bb-0753d7fd0fa2")
 	)
 	(no_connect
-		(at 124.46 105.41)
-		(uuid "504aeb33-a899-4f1d-ac8b-e85561c6ba54")
-	)
-	(no_connect
 		(at 124.46 49.53)
 		(uuid "66ab232c-2bbb-4537-8418-b31deecea85b")
-	)
-	(no_connect
-		(at 124.46 67.31)
-		(uuid "75b0d0a5-54d3-41c5-b66a-46b123fe525c")
 	)
 	(no_connect
 		(at 129.54 152.4)
 		(uuid "7b31d7f4-158c-453f-b99c-dd97fbf2895d")
 	)
 	(no_connect
-		(at 78.74 52.07)
-		(uuid "902a07bb-94f8-413f-8ddf-860ae9b7122f")
-	)
-	(no_connect
-		(at 78.74 97.79)
-		(uuid "94b2a2a0-6dbe-4970-92d3-f08b3b4a3924")
-	)
-	(no_connect
 		(at 124.46 97.79)
 		(uuid "96c1862f-e134-4923-8ac9-031c055e536e")
-	)
-	(no_connect
-		(at 78.74 90.17)
-		(uuid "98132fcc-972e-4556-887c-1b4c260bded9")
 	)
 	(no_connect
 		(at 78.74 107.95)
@@ -7177,16 +7603,8 @@
 		(uuid "a9e03b99-697c-4557-922c-faa1a248da90")
 	)
 	(no_connect
-		(at 124.46 102.87)
-		(uuid "b6caf78e-05c5-48ca-8f9e-fbd13a4b7c26")
-	)
-	(no_connect
 		(at 78.74 110.49)
 		(uuid "b9b2f90e-6f69-4078-85f1-3f68d58f6661")
-	)
-	(no_connect
-		(at 124.46 87.63)
-		(uuid "c1a31fe6-53db-4e77-be38-9ccbe57005c4")
 	)
 	(no_connect
 		(at 124.46 100.33)
@@ -7195,10 +7613,6 @@
 	(no_connect
 		(at 124.46 92.71)
 		(uuid "f38fbf51-1e04-402d-902b-b7bf592ecdae")
-	)
-	(no_connect
-		(at 124.46 85.09)
-		(uuid "f526844b-8ef4-446b-a630-ec7cf8a79690")
 	)
 	(wire
 		(pts
@@ -7229,6 +7643,16 @@
 			(type default)
 		)
 		(uuid "0688e6c5-f6b8-42ba-91a8-fdb71d7bd8cc")
+	)
+	(wire
+		(pts
+			(xy 154.94 77.47) (xy 154.94 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07ab4aa0-447f-43ac-99ee-56207ffdf1bf")
 	)
 	(wire
 		(pts
@@ -7732,16 +8156,6 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 82.55) (xy 147.32 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9df54334-7dc8-49ef-9463-9c1907301e2e")
-	)
-	(wire
-		(pts
 			(xy 29.21 24.13) (xy 29.21 22.86)
 		)
 		(stroke
@@ -7872,6 +8286,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 82.55) (xy 154.94 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb1240a3-b500-4ff4-9716-b75668c9fc68")
+	)
+	(wire
+		(pts
 			(xy 213.36 62.23) (xy 213.36 87.63)
 		)
 		(stroke
@@ -7939,16 +8363,6 @@
 			(type default)
 		)
 		(uuid "dd65c70d-df28-441f-9c2f-d15c06645522")
-	)
-	(wire
-		(pts
-			(xy 147.32 87.63) (xy 147.32 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dea964bc-d229-4d20-b963-69f1fd64ccd8")
 	)
 	(wire
 		(pts
@@ -8114,6 +8528,54 @@
 			)
 		)
 	)
+	(global_label "SDCARD_CMD"
+		(shape input)
+		(at 124.46 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0a12e21d-6350-4e82-b0e8-68a21ababdcd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 139.7823 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "SDCARD_DAT2"
+		(shape input)
+		(at 124.46 105.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0d73b698-5338-4946-88b9-ffec1c35b353")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 140.3266 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "HAPTIC_SCL"
 		(shape input)
 		(at 104.14 144.78 180)
@@ -8135,6 +8597,54 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "VDD_SPI"
+		(shape input)
+		(at 156.21 151.13 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "17467a70-0d46-4cfd-9f6a-c52cd9043b3b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 156.21 140.4643 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "SDCARD_SHELL"
+		(shape input)
+		(at 124.46 69.85 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1b403bf8-cbb9-4e1b-bb02-bd2a189698a4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 141.5361 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -8306,6 +8816,30 @@
 			)
 		)
 	)
+	(global_label "SDCARD_CD"
+		(shape input)
+		(at 78.74 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "378441aa-1d76-4334-88d7-6c344e7423d9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 64.8691 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "Touch-RST"
 		(shape input)
 		(at 78.74 67.31 180)
@@ -8319,6 +8853,30 @@
 		(uuid "3edf934c-8dd9-4976-9103-7fe25a0703a3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 65.2321 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SDCARD_DAT1"
+		(shape input)
+		(at 140.97 163.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "42ee73de-c5c6-4aa6-8c8d-aae775ec764a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.1034 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8375,6 +8933,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "SDCARD_DAT3"
+		(shape input)
+		(at 124.46 102.87 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "492438f0-be5e-440b-960a-1a52e91d9e47")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 140.3266 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -8570,6 +9152,30 @@
 			)
 		)
 	)
+	(global_label "SDCARD_DAT1"
+		(shape input)
+		(at 124.46 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "61041f3a-3332-496d-b726-90f433e67b64")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 140.3266 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "CHG"
 		(shape input)
 		(at 252.73 95.25 0)
@@ -8655,6 +9261,30 @@
 		(uuid "63e911f4-f2fb-4558-b4dc-ed0c23942803")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 61.9057 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SDCARD_CLK"
+		(shape input)
+		(at 140.97 173.99 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "69930eb8-5fc7-41f9-8176-968f82df2b7e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 126.071 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8762,6 +9392,30 @@
 			)
 		)
 	)
+	(global_label "SDCARD_CMD"
+		(shape input)
+		(at 140.97 176.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7dc0af56-5bc1-4005-9cd5-ff0529d27ce7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.6477 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "QSPI_WP"
 		(shape input)
 		(at 124.46 54.61 0)
@@ -8810,6 +9464,30 @@
 			)
 		)
 	)
+	(global_label "SDCARD_SHELL"
+		(shape input)
+		(at 140.97 184.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "945c6cfc-c7c1-4baa-b51e-fbffb6349515")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.8939 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "USB_D+"
 		(shape input)
 		(at 186.69 58.42 0)
@@ -8855,6 +9533,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "SDCARD_CD"
+		(shape input)
+		(at 171.45 161.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a1e698ae-2dcb-415f-9d05-73cc0e14c381")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 185.3209 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -8930,6 +9632,30 @@
 			)
 		)
 	)
+	(global_label "SDCARD_WP"
+		(shape input)
+		(at 78.74 97.79 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ac48ec1b-7671-481d-8e69-5aef0ef8d9ee")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 64.6877 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "QSPI_D1"
 		(shape input)
 		(at 200.66 135.89 180)
@@ -8967,6 +9693,30 @@
 		(uuid "b8ea93d8-fc8e-4b4a-9385-22ef908c60a0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 49.7333 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "SDCARD_WP"
+		(shape input)
+		(at 171.45 163.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ba974ddb-3bdd-45bb-8b11-c4846b0aa408")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 185.5023 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9039,6 +9789,30 @@
 		(uuid "c6db4eec-de3a-4f4d-b908-0419530bc5ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 189.571 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SDCARD_DAT0"
+		(shape input)
+		(at 78.74 52.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c86c2e41-fe1c-4427-898c-a9b5b28ee516")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 62.8734 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9314,6 +10088,30 @@
 			)
 		)
 	)
+	(global_label "SDCARD_DAT3"
+		(shape input)
+		(at 140.97 168.91 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e98787df-78a2-45c9-b798-5e273a55d962")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.1034 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "QSPI_CS"
 		(shape input)
 		(at 124.46 57.15 0)
@@ -9434,6 +10232,54 @@
 			)
 		)
 	)
+	(global_label "SDCARD_CLK"
+		(shape input)
+		(at 124.46 67.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f6f76394-e059-4a64-b2c2-93fe5360e1da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 139.359 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "SDCARD_DAT2"
+		(shape input)
+		(at 140.97 166.37 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fa1492a6-cf67-4c21-8352-a4f5e4d2b41d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.1034 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "SPI_CLK"
 		(shape input)
 		(at 78.74 80.01 180)
@@ -9447,6 +10293,30 @@
 		(uuid "fe8a9bcb-e988-4fc8-9952-a7e370023706")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 68.1348 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SDCARD_DAT0"
+		(shape input)
+		(at 140.97 161.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "feb20f87-5388-4fb2-a42f-396da71dd2fd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.1034 161.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10939,6 +11809,118 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:SD_Card_Receptacle")
+		(at 156.21 171.45 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2a303c1d-a4bb-4163-991f-78eaf4c3859a")
+		(property "Reference" "J7"
+			(at 158.3533 148.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SD_Card_Receptacle"
+			(at 158.3533 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Card:SD_TE_2041021"
+			(at 165.1 174.752 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf"
+			(at 156.21 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SD card receptacle"
+			(at 156.21 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "10"
+			(uuid "83b91e18-bffd-46e8-958d-93428f8a4f83")
+		)
+		(pin "8"
+			(uuid "a4eed388-eef6-408e-a4a6-f542730d072c")
+		)
+		(pin "7"
+			(uuid "e293ae50-84c3-4589-81d0-6365a53f88f0")
+		)
+		(pin "2"
+			(uuid "3e458aad-c9ee-45f1-8a37-ed3fbfa47980")
+		)
+		(pin "SH"
+			(uuid "9f2cc748-d35a-4ffd-932a-5ac3ffa9aa75")
+		)
+		(pin "9"
+			(uuid "494f72eb-2e1d-4ef2-b177-4d82ee4e7512")
+		)
+		(pin "6"
+			(uuid "23d43eaf-4f2c-47f2-bd6e-2c9629b7323e")
+		)
+		(pin "5"
+			(uuid "258da731-6a09-4e5e-8320-dbffab6612a4")
+		)
+		(pin "3"
+			(uuid "f8b49935-f043-4f26-9e97-9b9289927eba")
+		)
+		(pin "1"
+			(uuid "7d12bb8b-9456-4ea8-a845-b07eb16be200")
+		)
+		(pin "11"
+			(uuid "8fdcbd4d-c22c-492a-881a-2ed250ba4147")
+		)
+		(pin "4"
+			(uuid "72bc075e-cfdd-4ddb-9de6-6cc894725a62")
+		)
+		(instances
+			(project "horizon"
+				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 38.1 38.1 90)
 		(unit 1)
@@ -11209,6 +12191,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 151.13 87.63 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "30c7fda7-deb8-4036-86b7-f1eca855b597")
+		(property "Reference" "R14"
+			(at 151.13 81.28 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330Ω"
+			(at 151.13 83.82 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 151.13 89.408 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 151.13 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "bf92cb18-6b17-4b83-b0cb-a6c404bdfe04")
+		)
+		(pin "1"
+			(uuid "f85b6f95-ed95-4722-9e96-3b89a72f9a9c")
+		)
+		(instances
+			(project "horizon"
+				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 147.32 119.38 0)
 		(unit 1)
@@ -11363,6 +12425,86 @@
 			(project "horizon"
 				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
 					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 151.13 82.55 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33d521e6-00eb-4287-9e78-17de01020a3d")
+		(property "Reference" "R13"
+			(at 151.13 76.2 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330Ω"
+			(at 151.13 78.74 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 151.13 84.328 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 151.13 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "786bda90-8cc1-44d0-939e-056aa11c0919")
+		)
+		(pin "1"
+			(uuid "6bbc6a9f-bc0f-459a-9a01-09ed913554dc")
+		)
+		(instances
+			(project "horizon"
+				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -12037,7 +13179,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 77.47 90)
+		(at 154.94 77.47 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12048,7 +13190,7 @@
 		(fields_autoplaced yes)
 		(uuid "41cf33d4-0dd8-4c04-873a-75364c8c090e")
 		(property "Reference" "#PWR012"
-			(at 153.67 77.47 0)
+			(at 161.29 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12059,7 +13201,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 151.13 77.4699 90)
+			(at 158.75 77.4699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12070,7 +13212,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 147.32 77.47 0)
+			(at 154.94 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12081,7 +13223,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 77.47 0)
+			(at 154.94 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12092,7 +13234,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 147.32 77.47 0)
+			(at 154.94 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13173,6 +14315,84 @@
 			(project "horizon"
 				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
 					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 156.21 191.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56df138b-1850-4625-b437-a53a38b27a73")
+		(property "Reference" "#PWR064"
+			(at 156.21 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 156.21 196.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 156.21 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7d928c2a-37b7-45c6-8e6a-33dab8fa695e")
+		)
+		(instances
+			(project "horizon"
+				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -14712,6 +15932,86 @@
 			(project "horizon"
 				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
 					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 151.13 77.47 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "76c019a7-73a2-4645-805b-39bacabbfa7b")
+		(property "Reference" "R12"
+			(at 151.13 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330Ω"
+			(at 151.13 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 151.13 79.248 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 151.13 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "90e1b5ba-d9c9-401f-9165-d26bfd8f3ed0")
+		)
+		(pin "1"
+			(uuid "73488847-c90b-4c90-aa14-3ead175f6871")
+		)
+		(instances
+			(project "horizon"
+				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
+					(reference "R12")
 					(unit 1)
 				)
 			)
