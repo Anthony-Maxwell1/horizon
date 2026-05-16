@@ -7591,10 +7591,6 @@
 		(uuid "7b31d7f4-158c-453f-b99c-dd97fbf2895d")
 	)
 	(no_connect
-		(at 78.74 90.17)
-		(uuid "8ff13786-c567-4118-b7f1-4f006a4a4698")
-	)
-	(no_connect
 		(at 124.46 97.79)
 		(uuid "96c1862f-e134-4923-8ac9-031c055e536e")
 	)
@@ -7613,6 +7609,10 @@
 	(no_connect
 		(at 124.46 100.33)
 		(uuid "c4d998b6-0cce-4396-bc9b-bb2c7644acfe")
+	)
+	(no_connect
+		(at 78.74 90.17)
+		(uuid "de077763-8861-4074-9b45-f5fbe66c8cce")
 	)
 	(no_connect
 		(at 124.46 92.71)
@@ -9708,6 +9708,30 @@
 			)
 		)
 	)
+	(global_label "SDCARD_CD"
+		(shape input)
+		(at 124.46 69.85 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c6956a06-43de-4a66-9edc-383da2de6f79")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 138.3309 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "QSPI_WP"
 		(shape input)
 		(at 200.66 140.97 180)
@@ -9921,30 +9945,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "SDCARD_CD"
-		(shape input)
-		(at 124.46 69.85 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d7c1be64-0fe0-40b2-8e11-0f6c25ce0e9c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 138.3309 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -11433,7 +11433,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal"
+		(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-6S-0.5SH_1x06-1MP_P0.50mm_Horizontal"
 			(at 33.02 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -11677,85 +11677,6 @@
 			(project "horizon"
 				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
 					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 140.97 184.15 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "271c6164-e651-4300-85da-878d51c75e8c")
-		(property "Reference" "#PWR065"
-			(at 134.62 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 137.16 184.1499 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 140.97 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 140.97 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 140.97 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "12e48c41-faf6-471d-bc9a-2faa898618a6")
-		)
-		(instances
-			(project "horizon"
-				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
-					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -17643,7 +17564,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x14_P2.54mm_Horizontal"
+		(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-14S-0.5SH_1x14-1MP_P0.50mm_Horizontal"
 			(at 33.02 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -17755,6 +17676,85 @@
 			(project "horizon"
 				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
 					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 140.97 184.15 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b3b2543-31f7-4284-8b80-b8a1d2d3ea80")
+		(property "Reference" "#PWR065"
+			(at 134.62 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 137.16 184.1499 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 140.97 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3c3ed929-4f6b-4478-a6f9-a25aa9f8c8e8")
+		)
+		(instances
+			(project "horizon"
+				(path "/b7fe370f-670d-489a-828f-5e84b63a70c0"
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
