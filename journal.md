@@ -146,3 +146,16 @@ I then remembered my SD card, and added it in with minimal effort. I did, howeve
 Now, seemingly done with the hardware for now, I wanted to delay going on to the CAD step, although that is probably going to be the fastest step. I've had enough of my macbook randomly stopping Lapse from recording.
 
 Time for some firmware!!! I decided to forget about getting it to run on the device for now, and just focus on getting it to run on my PC with a good interface.
+
+# May 16th: Began firmware
+
+As I said before, I already had a basic setup that "should" render through the driver. I'd look at testing it later, however my first priority was getting some good DX.
+
+My plan was simple:
+
+- LVGL has native windows support
+- Most of my firmware doesn't depend on native features
+  Meaning logically, what I do next is very simple:
+- The main os works on it's own. Specific functions are provided by "native" files, with a condition on which to use.
+
+So, I began.
