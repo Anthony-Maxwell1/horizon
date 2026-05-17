@@ -1,11 +1,17 @@
 #include <platform/common/platform.h>
-#include <Arduino.h>
 #include <lvgl.h>
-#include <esp_timer.h>
 
+#include <chrono>
+
+// LVGL tick using std::chrono
 static uint32_t lv_tick(void)
 {
-    return esp_timer_get_time() / 1000;
+    using namespace std::chrono;
+
+    static auto start = steady_clock::now();
+    auto now = steady_clock::now();
+
+    return duration_cast<milliseconds>(now - start).count();
 }
 
 void platform_init()

@@ -155,7 +155,9 @@ My plan was simple:
 
 - LVGL has native windows support
 - Most of my firmware doesn't depend on native features
-  Meaning logically, what I do next is very simple:
+
+Meaning logically, what I do next is very simple:
+
 - The main os works on it's own. Specific functions are provided by "native" files, with a condition on which to use.
 
 So, I began.
