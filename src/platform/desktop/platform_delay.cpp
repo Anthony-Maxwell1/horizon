@@ -1,3 +1,4 @@
+#include <platform/common/platform.h>
 #include <thread>
 #include <chrono>
 

@@ -1,20 +1,18 @@
 #include <platform/common/platform.h>
 #include <lvgl.h>
 
-void setup()
+int main()
 {
-  platform_init();
-  platform_init_display();
-  platform_init_storage();
-  platform_init_input();
-}
+    platform_init();
+    platform_init_display();
+    platform_init_storage();
+    platform_init_input();
 
-// ==========================
-// LOOP
-// ==========================
+    while (true)
+    {
+        lv_timer_handler();
+        platform_delay(5);
+    }
 
-void loop()
-{
-  lv_timer_handler();
-  platform_delay(5);
+    return 0;
 }

@@ -7,8 +7,8 @@ static SDL_Window *window = nullptr;
 static SDL_Renderer *renderer = nullptr;
 static SDL_Texture *texture = nullptr;
 
-static int screen_w = 1872;
-static int screen_h = 1404;
+#define SCREEN_W 1872
+#define SCREEN_H 1404
 
 static void flush_cb(lv_display_t *disp,
                      const lv_area_t *area,
@@ -17,7 +17,7 @@ static void flush_cb(lv_display_t *disp,
     int w = area->x2 - area->x1 + 1;
     int h = area->y2 - area->y1 + 1;
 
-    SDL_UpdateTexture(texture, nullptr, px_map, screen_w);
+    SDL_UpdateTexture(texture, nullptr, px_map, SCREEN_W);
 
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, texture, nullptr, nullptr);
@@ -35,8 +35,8 @@ void platform_init_display()
         "Horizon (LVGL Desktop)",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
-        screen_w,
-        screen_h,
+        SCREEN_W,
+        SCREEN_H,
         SDL_WINDOW_SHOWN);
 
     renderer = SDL_CreateRenderer(
@@ -48,13 +48,14 @@ void platform_init_display()
         renderer,
         SDL_PIXELFORMAT_ARGB8888,
         SDL_TEXTUREACCESS_STREAMING,
-        screen_w,
-        screen_h);
+        SCREEN_W,
+        SCREEN_H);
 
     // ── LVGL display setup ───────────────────────────
-    lv_display_t *disp = lv_display_create(screen_w, screen_h);
+    lv_display_t *disp = lv_display_create(SCREEN_W, SCREEN_H);
 
-    static lv_color_t buf1[screen_w * 40]; // partial buffer
+    static constexpr size_t buf_size = SCREEN_W * 40;
+    static lv_color_t buf1[buf_size]; // partial buffer
 
     lv_display_set_buffers(
         disp,

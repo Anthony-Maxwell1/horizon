@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 
 void platform_init();
 void platform_init_display();
