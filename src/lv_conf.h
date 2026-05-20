@@ -69,7 +69,7 @@
 
 #if LV_USE_STDLIB_MALLOC == LV_STDLIB_BUILTIN
     /** Size of memory available for `lv_malloc()` in bytes (>= 2kB) */
-    #define LV_MEM_SIZE (16 * 1024U)          /**< [bytes] */
+    #define LV_MEM_SIZE (256 * 1024U)          /**< [bytes] */
 
     /** Size of the memory expand for `lv_malloc()` in bytes */
     #define LV_MEM_POOL_EXPAND_SIZE 0
@@ -88,7 +88,7 @@
  *====================*/
 
 /** Default display refresh, input device read and animation step period. */
-#define LV_DEF_REFR_PERIOD  1000      /**< [ms] */
+#define LV_DEF_REFR_PERIOD  500      /**< [ms] */
 
 /** Default Dots Per Inch. Used to initialize default sizes such as widgets sized, style paddings.
  * (Not so important, you can adjust it to modify default sizes and spaces.) */
@@ -203,7 +203,7 @@
     /**
      * - 0: Use a simple renderer capable of drawing only simple rectangles with gradient, images, text, and straight lines only.
      * - 1: Use a complex renderer capable of drawing rounded corners, shadow, skew lines, and arcs too. */
-    #define LV_DRAW_SW_COMPLEX          0
+    #define LV_DRAW_SW_COMPLEX          1
 
     #if LV_DRAW_SW_COMPLEX == 1
         /** Allow buffering some shadow calculation.
@@ -457,7 +457,7 @@
  *-----------*/
 
 /** Enable log module */
-#define LV_USE_LOG 0
+#define LV_USE_LOG 1
 #if LV_USE_LOG
     /** Set value to one of the following levels of logging detail:
      *  - LV_LOG_LEVEL_TRACE    Log detailed information.
@@ -470,7 +470,7 @@
 
     /** - 1: Print log with 'printf';
      *  - 0: User needs to register a callback with `lv_log_register_print_cb()`. */
-    #define LV_LOG_PRINTF 0
+    #define LV_LOG_PRINTF 1
 
     /** Set callback to print logs.
      *  E.g `my_print`. The prototype should be `void my_print(lv_log_level_t level, const char * buf)`.
@@ -503,8 +503,8 @@
 
 /* Enable assertion failures if an operation fails or invalid data is found.
  * If LV_USE_LOG is enabled, an error message will be printed on failure. */
-#define LV_USE_ASSERT_NULL          0   /**< Check if the parameter is NULL. (Very fast, recommended) */
-#define LV_USE_ASSERT_MALLOC        0   /**< Checks is the memory is successfully allocated or no. (Very fast, recommended) */
+#define LV_USE_ASSERT_NULL          1   /**< Check if the parameter is NULL. (Very fast, recommended) */
+#define LV_USE_ASSERT_MALLOC        1   /**< Checks is the memory is successfully allocated or no. (Very fast, recommended) */
 #define LV_USE_ASSERT_STYLE         0   /**< Check if the styles are properly initialized. (Very fast, recommended) */
 #define LV_USE_ASSERT_MEM_INTEGRITY 0   /**< Check the integrity of `lv_mem` after critical operations. (Slow) */
 #define LV_USE_ASSERT_OBJ           0   /**< Check the object's type and existence (e.g. not deleted). (Slow) */
@@ -660,7 +660,7 @@
 #define LV_FONT_MONTSERRAT_22 0
 #define LV_FONT_MONTSERRAT_24 0
 #define LV_FONT_MONTSERRAT_26 0
-#define LV_FONT_MONTSERRAT_28 0
+#define LV_FONT_MONTSERRAT_28 1
 #define LV_FONT_MONTSERRAT_30 0
 #define LV_FONT_MONTSERRAT_32 0
 #define LV_FONT_MONTSERRAT_34 0
@@ -803,7 +803,7 @@
 
 #define LV_USE_DROPDOWN   0   /**< Requires: lv_label */
 
-#define LV_USE_IMAGE      0   /**< Requires: lv_label */
+#define LV_USE_IMAGE      1   /**< Requires: lv_label */
 
 #define LV_USE_IMAGEBUTTON     0
 
@@ -891,7 +891,7 @@
 /* Documentation for layouts can be found here: https://docs.lvgl.io/master/common-widget-features/layouts/index.html . */
 
 /** A layout similar to Flexbox in CSS. */
-#define LV_USE_FLEX 0
+#define LV_USE_FLEX 1
 
 /** A layout similar to Grid in CSS. */
 #define LV_USE_GRID 0

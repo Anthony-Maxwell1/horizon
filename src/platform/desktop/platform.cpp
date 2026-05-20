@@ -18,5 +18,4 @@ void platform_init()
 {
     lv_init();
     lv_tick_set_cb(lv_tick);
-    platform_init_display();
 }
