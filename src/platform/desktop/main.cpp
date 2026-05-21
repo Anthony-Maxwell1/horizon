@@ -25,6 +25,7 @@ static int desktop_main_loop()
             return 0;
 
         lv_timer_handler();
+        app_loop();
         platform_delay(5);
     }
 

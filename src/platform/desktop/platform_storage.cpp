@@ -86,5 +86,9 @@ namespace platform::storage
 void platform_init_storage()
 {
     platform::storage::ensure_root();
-    // not much to do here
+    std::vector<uint8_t> bytes;
+    if (!platform::storage::get_path("config.txt", bytes))
+    {
+        platform::storage::set_path("config.txt", std::vector<uint8_t>{});
+    }
 }
