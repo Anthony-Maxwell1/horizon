@@ -89,10 +89,6 @@ size_t calc_end_offset(size_t start_offset, const lv_font_t *font, int max_width
     lv_point_t final_size;
     std::string final_chunk(text + start_offset, lo - start_offset);
     lv_text_get_size(&final_size, final_chunk.c_str(), font, 0, 0, max_width, LV_TEXT_FLAG_NONE);
-    printf("final chunk: %zu bytes, measured size: %d x %d, max_height: %d\n",
-           lo - start_offset, final_size.x, final_size.y, max_height);
-    printf("calc_end_offset: start=%zu end=%zu text_len=%zu\n",
-           start_offset, lo, strlen(text + start_offset));
     return lo;
 }
 
