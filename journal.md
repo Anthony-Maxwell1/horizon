@@ -161,3 +161,31 @@ Meaning logically, what I do next is very simple:
 - The main os works on it's own. Specific functions are provided by "native" files, with a condition on which to use.
 
 So, I began.
+
+# May 17th
+
+Today was a day of debugging, and attempting to switch to ESP-IDF and juggling dependencies.
+
+# May 18th
+
+Today was a big day. For the past three days I've been switching back and forth between arduino, esp-idf and a hybrid setup, and today I finally got it to work.
+
+I jumped through three hoops to get here
+
+1. Managed to get sdkconfig.h to compile properly, by luck
+2. Switched to PSRAM and slimmed down buffers and configs to fit within the limits.
+3. Got SDL2 as well as fixed some bugs to get desktop to compile.
+
+I now have it working! Next steps are located in the app/ folder, for the ui and functionality.
+
+# May 19th-20th
+
+This period was simply troubleshooting. From one issue to the next, for example fixing my development environment on my windows laptop.
+
+Eventually however, I got it working.
+
+# May 21st
+
+Today I actually began working on the actual "os" you could call it, or UI.
+
+Modularity was in the thought process from the beginning, so I made a pages structure making it easy to add on to.

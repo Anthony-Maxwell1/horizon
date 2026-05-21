@@ -7,18 +7,14 @@ static SDL_Window   *window   = nullptr;
 static SDL_Renderer *renderer = nullptr;
 static SDL_Texture  *texture  = nullptr;
 
-// Real e-ink resolution
-#define SCREEN_W 1872
-#define SCREEN_H 1404
-
-// Scale down for desktop display (50%)
-#define DISPLAY_SCALE 2
+#define SCREEN_W 1404
+#define SCREEN_H 1872
+#define DISPLAY_SCALE 3
 
 static void flush_cb(lv_display_t *disp,
                      const lv_area_t *area,
                      uint8_t *px_map)
 {
-    // Update only the damaged area using the correct pitch (bytes per row).
     int x = area->x1;
     int y = area->y1;
     int w = area->x2 - area->x1 + 1;
@@ -30,9 +26,8 @@ static void flush_cb(lv_display_t *disp,
     }
 
     SDL_Rect rect{ x, y, w, h };
-    int pitch = w * 4; // 4 bytes per pixel for ARGB8888
+    int pitch = SCREEN_W * 4;
 
-    // Use the rect to avoid reading/writing out of bounds of px_map
     SDL_UpdateTexture(texture, &rect, px_map, pitch);
 
     SDL_RenderClear(renderer);
@@ -44,9 +39,9 @@ static void flush_cb(lv_display_t *disp,
 
 void platform_init_display()
 {
-    // Fix: hints must be set BEFORE SDL_Init
     SDL_SetHint(SDL_HINT_WINDOWS_DPI_AWARENESS, "permonitor");
     SDL_SetHint(SDL_HINT_WINDOWS_DPI_SCALING, "0");
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
 
     SDL_Init(SDL_INIT_VIDEO);
 
@@ -54,7 +49,7 @@ void platform_init_display()
         "Horizon (LVGL Desktop)",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
-        SCREEN_W / DISPLAY_SCALE,   // scaled window size
+        SCREEN_W / DISPLAY_SCALE,
         SCREEN_H / DISPLAY_SCALE,
         SDL_WINDOW_SHOWN);
 
@@ -63,13 +58,16 @@ void platform_init_display()
         -1,
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    // Texture stays full resolution — SDL scales to fit window
+    // Full resolution texture, SDL scales it down to the window size
     texture = SDL_CreateTexture(
         renderer,
         SDL_PIXELFORMAT_ARGB8888,
         SDL_TEXTUREACCESS_STREAMING,
         SCREEN_W,
         SCREEN_H);
+
+    // Tell SDL to scale the full-res texture down to fit the window
+    SDL_RenderSetLogicalSize(renderer, SCREEN_W, SCREEN_H);
 
     lv_display_t *disp = lv_display_create(SCREEN_W, SCREEN_H);
 

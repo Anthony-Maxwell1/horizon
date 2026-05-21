@@ -1,0 +1,1 @@
+reader_config.loaded_book_name=test.txt

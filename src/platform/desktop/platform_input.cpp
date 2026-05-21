@@ -3,10 +3,8 @@
 #include <lvgl.h>
 #include <SDL2/SDL.h>
 
-// Match display scaling in platform_display.cpp
-#define DISPLAY_SCALE 2
+#define DISPLAY_SCALE 3
 
-// Global input device for event-driven processing
 static lv_indev_t *g_mouse_indev = NULL;
 
 static void sdl_lv_read_cb(lv_indev_t *indev, lv_indev_data_t *data)
