@@ -16,6 +16,9 @@ bool change = true;
 
 std::unordered_map<size_t, size_t> page_cache;
 
+lv_obj_t *next_btn = nullptr;
+lv_obj_t *prev_btn = nullptr;
+
 size_t calc_end_offset(size_t start_offset, const lv_font_t *font, int max_width, int max_height, const char *text)
 {
     if (page_cache.count(start_offset))
@@ -193,6 +196,7 @@ void init_read_page()
     if (platform::storage::get_path(book.currBookPath, bytes))
     {
         book.currBook = std::string(bytes.begin(), bytes.end());
+        page_cache.clear();
     }
 
     book.offset = config.reader_config.current_offset;
@@ -210,12 +214,12 @@ void init_read_page()
     lv_obj_set_style_text_color(page_label, lv_color_black(), 0);
     render_page();
 
-    lv_obj_t *next_btn = lv_btn_create(scr);
+    next_btn = lv_btn_create(scr);
     lv_obj_align(next_btn, LV_ALIGN_TOP_LEFT, SCREEN_W / 3, 0);
     lv_obj_set_size(next_btn, SCREEN_W / 3 * 2, SCREEN_H);
     lv_obj_set_style_opa(next_btn, LV_OPA_TRANSP, 0);
 
-    lv_obj_t *prev_btn = lv_btn_create(scr);
+    prev_btn = lv_btn_create(scr);
     lv_obj_align(prev_btn, LV_ALIGN_TOP_LEFT, 0, 0);
     lv_obj_set_size(prev_btn, SCREEN_W / 3, SCREEN_H);
     lv_obj_set_style_opa(prev_btn, LV_OPA_TRANSP, 0);
@@ -233,23 +237,19 @@ void reset_bookstate()
     {
         lv_obj_t *scr = lv_scr_act();
 
-        lv_obj_set_style_bg_color(scr, lv_color_white(), 0);
-        lv_obj_set_style_bg_opa(scr, LV_OPA_COVER, 0);
-
-        page_label = lv_label_create(scr);
         lv_label_set_text(page_label, "Select a book!");
         lv_obj_align(page_label, LV_ALIGN_TOP_LEFT, 0, 24);
-        lv_obj_set_style_text_font(page_label, &lv_font_montserrat_14, 0);
-        lv_obj_set_style_text_color(page_label, lv_color_black(), 0);
         return;
     }
     std::vector<uint8_t> bytes;
     if (platform::storage::get_path(book.currBookPath, bytes))
     {
         book.currBook = std::string(bytes.begin(), bytes.end());
+        page_cache.clear();
     }
 
     book.offset = config.reader_config.current_offset;
+    change = true;
 }
 void loop_read_page()
 {
