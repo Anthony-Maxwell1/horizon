@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <chrono>
 
 void platform_init();
 void platform_init_display();
@@ -11,3 +12,7 @@ bool platform_poll_events();
 
 // touch
 void register_swipe_callback(void (*cb)(const char *dir));
+
+std::chrono::system_clock::time_point get_time();
+void set_time(std::chrono::system_clock::time_point t);
+bool sync_time();

@@ -9,7 +9,12 @@ struct ReaderConfig
 
 struct Features
 {
-    // Nothing for now.
+    bool home_page = false;
+    bool book_drawer = true;
+    bool clock = true;
+    bool status_bar = true;
+    bool book_progress = true;            // deps on status_bar
+    bool book_readtime_estimation = true; // deps on status_bar
 };
 
 struct Config
@@ -19,4 +24,4 @@ struct Config
 };
 
 Config load_config();
-bool set_config(const Config& config);
+bool set_config(const Config &config);

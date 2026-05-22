@@ -41,11 +41,19 @@ void toggle_drawer()
         lv_obj_clear_flag(drawer_obj, LV_OBJ_FLAG_HIDDEN);
         lv_obj_move_foreground(drawer_obj);
         lv_obj_invalidate(lv_scr_act());
+        if (next_btn)
+            lv_obj_add_flag(next_btn, LV_OBJ_FLAG_HIDDEN);
+        if (prev_btn)
+            lv_obj_add_flag(prev_btn, LV_OBJ_FLAG_HIDDEN);
     }
     else
     {
         lv_obj_add_flag(drawer_obj, LV_OBJ_FLAG_HIDDEN);
         lv_obj_invalidate(lv_scr_act());
+        if (next_btn)
+            lv_obj_clear_flag(next_btn, LV_OBJ_FLAG_HIDDEN);
+        if (prev_btn)
+            lv_obj_clear_flag(prev_btn, LV_OBJ_FLAG_HIDDEN);
     }
 }
 
@@ -67,6 +75,11 @@ void selectBook(const char *bookPath)
 void init_book_drawer()
 {
     lv_obj_t *scr = lv_scr_act();
+
+    lv_obj_add_event_cb(scr, [](lv_event_t *e)
+                        { 
+                            if (!lv_obj_has_flag(drawer_obj, LV_OBJ_FLAG_HIDDEN))
+                                toggle_drawer(); }, LV_EVENT_CLICKED, NULL);
 
     drawer_obj = lv_obj_create(scr);
     lv_obj_set_size(drawer_obj, 800, SCREEN_H);
