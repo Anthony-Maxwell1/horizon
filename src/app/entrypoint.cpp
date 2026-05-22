@@ -34,34 +34,34 @@ CURR_PAGE curr_page = READ;
 
 void app_entrypoint()
 {
-    // switch (curr_page)
-    // {
-    // case READ:
-    //     init_read_page();
-    //     init_book_drawer();
-    //     break;
-    // default:
-    //     break;
-    // }
+    switch (curr_page)
+    {
+    case READ:
+        init_read_page();
+        init_book_drawer();
+        break;
+    default:
+        break;
+    }
 
-    lv_obj_t *scr = lv_scr_act();
-    lv_obj_set_style_bg_color(scr, lv_color_white(), 0);
-    lv_obj_set_style_bg_opa(scr, LV_OPA_COVER, 0);
-    lv_obj_clear_flag(scr, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_add_flag(scr, LV_OBJ_FLAG_CLICKABLE);
+    // lv_obj_t *scr = lv_scr_act();
+    // lv_obj_set_style_bg_color(scr, lv_color_white(), 0);
+    // lv_obj_set_style_bg_opa(scr, LV_OPA_COVER, 0);
+    // lv_obj_clear_flag(scr, LV_OBJ_FLAG_SCROLLABLE);
+    // lv_obj_add_flag(scr, LV_OBJ_FLAG_CLICKABLE);
 
-    lv_obj_add_event_cb(scr, [](lv_event_t *e)
-                        {
-        lv_point_t p;
-        lv_indev_get_point(lv_indev_get_act(), &p);
-        printf("Click at %d %d\n", p.x, p.y);
+    // lv_obj_add_event_cb(scr, [](lv_event_t *e)
+    //                     {
+    //     lv_point_t p;
+    //     lv_indev_get_point(lv_indev_get_act(), &p);
+    //     printf("Click at %d %d\n", p.x, p.y);
 
-        lv_obj_t *circle = lv_obj_create(lv_scr_act());
-        lv_obj_remove_style_all(circle);
-        lv_obj_set_size(circle, 40, 40);
-        lv_obj_set_style_bg_color(circle, lv_color_black(), 0);
-        lv_obj_set_style_bg_opa(circle, LV_OPA_COVER, 0);
-        lv_obj_set_pos(circle, p.x - 20, p.y - 20); }, LV_EVENT_CLICKED, NULL);
+    //     lv_obj_t *circle = lv_obj_create(lv_scr_act());
+    //     lv_obj_remove_style_all(circle);
+    //     lv_obj_set_size(circle, 40, 40);
+    //     lv_obj_set_style_bg_color(circle, lv_color_black(), 0);
+    //     lv_obj_set_style_bg_opa(circle, LV_OPA_COVER, 0);
+    //     lv_obj_set_pos(circle, p.x - 20, p.y - 20); }, LV_EVENT_CLICKED, NULL);
 
     // lv_obj_set_style_bg_color(scr, lv_color_white(), 0);
     // lv_obj_set_style_bg_opa(scr, LV_OPA_COVER, 0);
