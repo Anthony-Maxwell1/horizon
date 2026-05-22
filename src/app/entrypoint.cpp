@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string>
 #include "pages/pages.h"
+#include "components/components.h"
 // static lv_obj_t *demo_label = nullptr;
 // static lv_obj_t *action_button = nullptr;
 // static lv_obj_t *action_button_label = nullptr;
@@ -37,6 +38,7 @@ void app_entrypoint()
     {
     case READ:
         init_read_page();
+        init_book_drawer();
         break;
     default:
         break;
@@ -75,6 +77,7 @@ void app_loop()
     {
     case READ:
         loop_read_page();
+        loop_book_drawer();
         break;
     default:
         break;

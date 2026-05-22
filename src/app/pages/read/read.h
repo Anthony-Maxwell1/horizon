@@ -4,3 +4,7 @@ struct BookState
     std::string currBookPath;
     size_t offset = 0;
 };
+
+static BookState book;
+
+void reset_bookstate();
