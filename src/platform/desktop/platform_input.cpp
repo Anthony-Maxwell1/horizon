@@ -61,36 +61,14 @@ bool platform_poll_events()
         switch (e.type)
         {
         case SDL_MOUSEMOTION:
-        {
-            SDL_Window *win = SDL_GetWindowFromID(e.motion.windowID);
-            int win_w = 0, win_h = 0;
-            if (win)
-                SDL_GetWindowSize(win, &win_w, &win_h);
-            if (win_w <= 0)
-                win_w = SCREEN_W / DISPLAY_SCALE;
-            if (win_h <= 0)
-                win_h = SCREEN_H / DISPLAY_SCALE;
-            float sx = (float)SCREEN_W / (float)win_w;
-            float sy = (float)SCREEN_H / (float)win_h;
-            g_last_x = (int)(e.motion.x * sx + 0.5f);
-            g_last_y = (int)(e.motion.y * sy + 0.5f);
-        }
-        break;
+            g_last_x = e.motion.x;
+            g_last_y = e.motion.y;
+            break;
         case SDL_MOUSEBUTTONDOWN:
             if (e.button.button == SDL_BUTTON_LEFT)
             {
-                SDL_Window *win = SDL_GetWindowFromID(e.button.windowID);
-                int win_w = 0, win_h = 0;
-                if (win)
-                    SDL_GetWindowSize(win, &win_w, &win_h);
-                if (win_w <= 0)
-                    win_w = SCREEN_W / DISPLAY_SCALE;
-                if (win_h <= 0)
-                    win_h = SCREEN_H / DISPLAY_SCALE;
-                float sx = (float)SCREEN_W / (float)win_w;
-                float sy = (float)SCREEN_H / (float)win_h;
-                g_last_x = (int)(e.button.x * sx + 0.5f);
-                g_last_y = (int)(e.button.y * sy + 0.5f);
+                g_last_x = e.button.x;
+                g_last_y = e.button.y;
                 g_press_start_x = g_last_x;
                 g_press_start_y = g_last_y;
                 g_pressed = true;
@@ -99,23 +77,12 @@ bool platform_poll_events()
         case SDL_MOUSEBUTTONUP:
             if (e.button.button == SDL_BUTTON_LEFT)
             {
-                SDL_Window *win = SDL_GetWindowFromID(e.button.windowID);
-                int win_w = 0, win_h = 0;
-                if (win)
-                    SDL_GetWindowSize(win, &win_w, &win_h);
-                if (win_w <= 0)
-                    win_w = SCREEN_W / DISPLAY_SCALE;
-                if (win_h <= 0)
-                    win_h = SCREEN_H / DISPLAY_SCALE;
-                float sx = (float)SCREEN_W / (float)win_w;
-                float sy = (float)SCREEN_H / (float)win_h;
-                int lx = (int)(e.button.x * sx + 0.5f);
-                int ly = (int)(e.button.y * sy + 0.5f);
-                g_last_x = lx;
-                g_last_y = ly;
+                g_last_x = e.button.x;
+                g_last_y = e.button.y;
                 g_pressed = false;
-                int dx = lx - g_press_start_x;
-                int dy = ly - g_press_start_y;
+
+                int dx = g_last_x - g_press_start_x;
+                int dy = g_last_y - g_press_start_y;
                 int adx = dx < 0 ? -dx : dx;
                 int ady = dy < 0 ? -dy : dy;
                 if (adx > 30 || ady > 30)
@@ -129,7 +96,6 @@ bool platform_poll_events()
                         cb(dir);
                 }
             }
-
             break;
         default:
             break;
