@@ -182,7 +182,7 @@ void on_prev_btn_click(lv_event_t *e)
 void init_read_page()
 {
     Config config = load_config();
-    if (config.features.clock)
+    if (config.features.top_bar)
         MARGINS[0] += 60; // make room for clock
     book.currBookPath = config.reader_config.loaded_book_name;
     if (book.currBookPath.empty())

@@ -1,3 +1,9 @@
 reader_config.font_size=14
 reader_config.loaded_book_name=test.txt
-reader_config.current_offset=10787
+reader_config.current_offset=12603
+top_bar=1
+clock=1
+battery=1
+status_bar=1
+book_progress=1
+book_readtime_estimation=1

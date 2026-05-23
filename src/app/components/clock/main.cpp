@@ -1,12 +1,18 @@
 #include <lvgl.h>
 #include <platform/common/platform.h>
 #include <chrono>
+#include <app/utils/config.h>
 
 static lv_obj_t *clock_label = nullptr;
 static std::chrono::system_clock::time_point last_time;
 
+bool should_show = false;
+
 void init_clock()
 {
+    if (!load_config().features.top_bar || !load_config().features.clock)
+        return;
+    should_show = true;
     clock_label = lv_label_create(lv_scr_act());
 
     lv_obj_align(clock_label, LV_ALIGN_TOP_MID, 0, 10);
@@ -37,7 +43,7 @@ void init_clock()
 
 void loop_clock()
 {
-    if (!clock_label)
+    if (!clock_label || !should_show)
         return;
 
     auto now = get_time();

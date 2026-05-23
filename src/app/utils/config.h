@@ -11,7 +11,9 @@ struct Features
 {
     bool home_page = false;
     bool book_drawer = true;
-    bool clock = true;
+    bool top_bar = true;
+    bool clock = true;   // deps on top_bar
+    bool battery = true; // deps on top_bar
     bool status_bar = true;
     bool book_progress = true;            // deps on status_bar
     bool book_readtime_estimation = true; // deps on status_bar

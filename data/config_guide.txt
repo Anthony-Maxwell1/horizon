@@ -1,0 +1,18 @@
+Anything with unknown keys will be ignored.
+DO NOT CHANGE (internal values):
+    - reader_config.current_offset
+MAYBE CHANGE (should be changed in software, but if feature is disabled you can change it here).
+    - reader_config.loaded_book_name                      (this is the path to the file. Should be in books.json)
+RESTRICTED (limited values):
+    - reader_config.font_size                             (NOT IMPLEMENTED)
+Change as you want:
+    - status_bar                                          (1 is on, anything else isn't)
+    - top_bar                                             (1 is on, anything else isn't)
+    - clock                                               (1 is on, anything else isn't)
+    - battery                                             (1 is on, anything else isn't)
+    - book_progress                                       (1 is on, anything else isn't)
+    - book_readtime_estimation                            (1 is on, anything else isn't)
+
+{key}={value}
+where {key} is one of the options above
+and {value} is a corresponding option.
