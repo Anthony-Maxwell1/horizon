@@ -1,3 +1,3 @@
 reader_config.font_size=14
-reader_config.loaded_book_name=test.txt
+reader_config.loaded_book_name=lol.txt
 reader_config.current_offset=0

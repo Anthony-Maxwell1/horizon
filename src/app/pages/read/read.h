@@ -10,6 +10,7 @@ struct BookState
 static BookState book;
 
 void reset_bookstate();
+void save_boookstate();
 
 extern lv_obj_t *next_btn;
 extern lv_obj_t *prev_btn;

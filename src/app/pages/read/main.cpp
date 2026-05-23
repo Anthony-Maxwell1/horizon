@@ -7,6 +7,7 @@
 #include <platform/common/platform_storage.h>
 #include "../pages.h"
 #include <app/dimensions.h>
+#include "../../utils/book_metadata.h"
 
 static lv_obj_t *page_label = nullptr;
 
@@ -130,6 +131,7 @@ void next_page(const lv_font_t *font, int max_width, int max_height, const char 
     if (next_offset == book.offset)
         return; // can't fit even a single char
     book.offset = next_offset;
+    save_boookstate();
 }
 
 void prev_page(const lv_font_t *font, int max_width, int max_height, const char *text)
@@ -138,6 +140,7 @@ void prev_page(const lv_font_t *font, int max_width, int max_height, const char 
         return;
     size_t prev_offset = calc_start_offset(book.offset, font, max_width, max_height, text);
     book.offset = prev_offset;
+    save_boookstate();
 }
 
 void render_page()
@@ -250,6 +253,18 @@ void reset_bookstate()
 
     book.offset = config.reader_config.current_offset;
     change = true;
+}
+void save_boookstate()
+{
+    BookEntry entry;
+    entry.curr_pos = book.offset;
+    entry.filename = book.currBookPath;
+    entry.title = book.currBookPath;
+    set_book(entry);
+    Config config = load_config();
+    config.reader_config.loaded_book_name = book.currBookPath;
+    config.reader_config.current_offset = book.offset;
+    set_config(config);
 }
 void loop_read_page()
 {
