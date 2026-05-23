@@ -143,13 +143,15 @@ void prev_page(const lv_font_t *font, int max_width, int max_height, const char 
     save_boookstate();
 }
 
+std::vector<int> MARGINS = {8, 8, 8, 8}; // top, right, bottom, left
+
 void render_page()
 {
     if (book.currBook.empty())
         return;
     lv_obj_t *scr = lv_scr_act();
-    int max_width = lv_obj_get_width(scr) - 8;
-    int max_height = lv_obj_get_height(scr) - 24 - 8; // account for top offset and margin
+    int max_width = lv_obj_get_width(scr) - MARGINS[3] - MARGINS[1];
+    int max_height = lv_obj_get_height(scr) - MARGINS[0] - MARGINS[2]; // account for top offset and margin
     printf("screen: %d x %d, max: %d x %d\n",
            lv_obj_get_width(scr), lv_obj_get_height(scr), max_width, max_height);
     size_t end_offset = calc_end_offset(book.offset, &FONT, max_width, max_height, book.currBook.c_str());
@@ -180,6 +182,8 @@ void on_prev_btn_click(lv_event_t *e)
 void init_read_page()
 {
     Config config = load_config();
+    if (config.features.clock)
+        MARGINS[0] += 60; // make room for clock
     book.currBookPath = config.reader_config.loaded_book_name;
     if (book.currBookPath.empty())
     {
@@ -190,7 +194,7 @@ void init_read_page()
 
         page_label = lv_label_create(scr);
         lv_label_set_text(page_label, "Select a book!");
-        lv_obj_align(page_label, LV_ALIGN_TOP_LEFT, 0, 24);
+        lv_obj_align(page_label, LV_ALIGN_TOP_LEFT, MARGINS[3], MARGINS[0]);
         lv_obj_set_style_text_font(page_label, &lv_font_montserrat_14, 0);
         lv_obj_set_style_text_color(page_label, lv_color_black(), 0);
         return;
@@ -212,25 +216,26 @@ void init_read_page()
     lv_label_set_long_mode(page_label, LV_LABEL_LONG_WRAP);
     lv_obj_set_width(page_label, lv_obj_get_width(scr) - 8);
     lv_label_set_text(page_label, "Loading...");
-    lv_obj_align(page_label, LV_ALIGN_TOP_LEFT, 0, 24);
+    lv_obj_align(page_label, LV_ALIGN_TOP_LEFT, MARGINS[3], MARGINS[0]);
     lv_obj_set_style_text_font(page_label, &FONT, 0);
     lv_obj_set_style_text_color(page_label, lv_color_black(), 0);
     render_page();
 
     next_btn = lv_btn_create(scr);
-    lv_obj_align(next_btn, LV_ALIGN_TOP_LEFT, SCREEN_W / 3, 0);
-    lv_obj_set_size(next_btn, SCREEN_W / 3 * 2, SCREEN_H);
+    lv_obj_align(next_btn, LV_ALIGN_TOP_LEFT, MARGINS[3] + (lv_obj_get_width(scr) - MARGINS[3] - MARGINS[1]) / 3, 0);
+    lv_obj_set_size(next_btn, (lv_obj_get_width(scr) - MARGINS[3] - MARGINS[1]) / 3 * 2, lv_obj_get_height(scr) - MARGINS[0] - MARGINS[2]);
     lv_obj_set_style_opa(next_btn, LV_OPA_TRANSP, 0);
 
     prev_btn = lv_btn_create(scr);
-    lv_obj_align(prev_btn, LV_ALIGN_TOP_LEFT, 0, 0);
-    lv_obj_set_size(prev_btn, SCREEN_W / 3, SCREEN_H);
+    lv_obj_align(prev_btn, LV_ALIGN_TOP_LEFT, MARGINS[3], 0);
+    lv_obj_set_size(prev_btn, (lv_obj_get_width(scr) - MARGINS[3] - MARGINS[1]) / 3, lv_obj_get_height(scr) - MARGINS[0] - MARGINS[2]);
     lv_obj_set_style_opa(prev_btn, LV_OPA_TRANSP, 0);
     lv_obj_add_event_cb(prev_btn, on_prev_btn_click, LV_EVENT_CLICKED, NULL);
     lv_obj_add_event_cb(next_btn, on_next_btn_click, LV_EVENT_CLICKED, NULL);
 
     lv_obj_add_flag(next_btn, LV_OBJ_FLAG_GESTURE_BUBBLE); // LET GESTURES WORK!!!!!!!!!!!!!!!!
     lv_obj_add_flag(prev_btn, LV_OBJ_FLAG_GESTURE_BUBBLE);
+    change = true;
 };
 void reset_bookstate()
 {

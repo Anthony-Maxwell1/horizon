@@ -1,17 +1,17 @@
 {
   "test.txt": {
     "title": "test.txt",
-    "curr_pos": 1903,
+    "curr_pos": 10787,
     "hash": "67274"
   },
   "example.txt": {
     "title": "Example",
     "curr_pos": 0,
-    "hash": ""
+    "hash": "230"
   },
   "lol.txt": {
-    "title": "LOL",
-    "curr_pos": 0,
+    "title": "lol.txt",
+    "curr_pos": 139,
     "hash": "140"
   }
 }

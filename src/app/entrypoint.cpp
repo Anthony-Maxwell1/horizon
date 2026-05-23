@@ -34,6 +34,8 @@ CURR_PAGE curr_page = READ;
 
 void app_entrypoint()
 {
+    init_clock();   // always show the clock
+    init_battery(); // always show battery
     switch (curr_page)
     {
     case READ:
@@ -92,6 +94,8 @@ void app_entrypoint()
 
 void app_loop()
 {
+    loop_clock();   // always show clock
+    loop_battery(); // always show battery
     switch (curr_page)
     {
     case READ:

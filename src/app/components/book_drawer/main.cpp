@@ -39,6 +39,8 @@ void toggle_drawer()
 
 void init_book_drawer()
 {
+    if (!load_config().features.book_drawer)
+        return;
     lv_obj_t *scr = lv_scr_act();
 
     lv_obj_add_event_cb(scr, [](lv_event_t *e)
