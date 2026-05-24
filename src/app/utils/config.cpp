@@ -42,9 +42,21 @@ Config load_config()
                 config.reader_config.loaded_book_name = val;
             else if (key == "reader_config.current_offset")
                 config.reader_config.current_offset = std::stoull(val);
-            // unknown keys silently ignored — forward compatible
+            else if (key == "book_drawer")
+                config.features.book_drawer = val == "1";
         }
     }
+    printf("Loaded config: font_size=%d, top_bar=%d, clock=%d, battery=%d, status_bar=%d, book_progress=%d, book_readtime_estimation=%d, loaded_book_name=%s, current_offset=%zu, book_drawer=%d\n",
+           config.reader_config.font_size,
+           config.features.top_bar,
+           config.features.clock,
+           config.features.battery,
+           config.features.status_bar,
+           config.features.book_progress,
+           config.features.book_readtime_estimation,
+           config.reader_config.loaded_book_name.c_str(),
+           config.reader_config.current_offset,
+           config.features.book_drawer);
     return config;
 }
 
@@ -58,7 +70,8 @@ bool set_config(const Config &config)
                           "battery=" + std::to_string(config.features.battery) + "\n" +
                           "status_bar=" + std::to_string(config.features.status_bar) + "\n" +
                           "book_progress=" + std::to_string(config.features.book_progress) + "\n" +
-                          "book_readtime_estimation=" + std::to_string(config.features.book_readtime_estimation) + "\n";
+                          "book_readtime_estimation=" + std::to_string(config.features.book_readtime_estimation) + "\n" +
+                          "book_drawer=" + std::to_string(config.features.book_drawer) + "\n";
     std::vector<uint8_t> bytes(content.begin(), content.end());
     return platform::storage::set_path("config.txt", bytes);
 };
